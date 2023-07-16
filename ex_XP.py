@@ -42,7 +42,7 @@ if (a > b):
 
 # 7)
 
-odd_even = input('Please provide me with a number')
+odd_even = input('Please provide me with a number ')
 if (int(odd_even) % 2 == 0):
     {
         print('The number you have provided is an even number')
