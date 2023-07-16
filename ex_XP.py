@@ -78,3 +78,71 @@ else:
     {
         print('Bounce shorty')
     }
+
+
+# EX XP GOLD
+
+# 1)
+
+for _ in range(4):
+    print("Hello world")
+for _ in range(4):
+    print("I love python")
+
+# 2)
+
+month = int(input("Enter a month (1 to 12): "))
+
+if month >= 3 and month <= 5:
+    season = "Spring"
+elif month >= 6 and month <= 8:
+    season = "Summer"
+elif month >= 9 and month <= 11:
+    season = "Autumn"
+else:
+    season = "Winter"
+
+print(f"The season of month {month} is {season}.")
+
+
+# EX XP Ninja
+
+# 3)
+
+# true
+# true
+# false
+# false
+# true
+# false
+
+x = (1 == True)  # print("x is", x) - true
+y = (1 == False)  # print("y is", y) - false
+a = True + 4  # a = (True + 4) - 5
+b = False + 10  # print("b:", b) - 10
+
+# 4)
+
+my_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+character_count = len(my_text)
+print("Number of characters:", character_count)
+
+# 5)
+
+longest_sentence = ""
+while True:
+    sentence = input("Enter the longest sentence without the letter 'A': ")
+    if 'A' in sentence:
+        print("Sorry, the sentence contains the letter 'A'. Try again.")
+    elif len(sentence) > len(longest_sentence):
+        longest_sentence = sentence
+        print("Congratulations! You've set a new longest sentence.")
+    else:
+        print("Not long enough. Try again.")
+
+    play_again = input("Do you want to continue? (yes/no): ")
+    if play_again.lower() != "yes":
+        break
+
+print("Thank you for playing!")
