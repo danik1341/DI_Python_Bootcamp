@@ -1,3 +1,6 @@
+import string  # FOR GOLD
+import random  # FOR GOLD
+
 # Ex XP
 
 # 1)
@@ -186,3 +189,128 @@ while sandwich_orders:
 print("All sandwiches have been made:")
 for sandwich in finished_sandwiches:
     print(sandwich)
+
+
+# GOLD
+
+# 1)
+
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+
+list1.extend(list2)
+print(list1)
+
+print('/////////////////////////////////////////')
+
+# 2)
+
+for num in range(1500, 2501):
+    if num % 5 == 0 and num % 7 == 0:
+        print(num)
+
+print('/////////////////////////////////////////')
+
+# 3)
+
+names = ['Samus', 'Cortana', 'V', 'Link', 'Mario', 'Cortana', 'Samus']
+
+user_name = input("Enter your name: ")
+
+if user_name in names:
+    index = names.index(user_name)
+    print(f"The first occurrence of {user_name} is at index {index}")
+
+print('/////////////////////////////////////////')
+
+# 4)
+
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+num3 = float(input("Enter the third number: "))
+
+max_num = max(num1, num2, num3)
+print("The greatest number is:", max_num)
+
+print('/////////////////////////////////////////')
+
+
+# 5)
+
+alphabet = string.ascii_lowercase
+
+for letter in alphabet:
+    if letter in 'aeiou':
+        print(f"{letter} is a vowel.")
+    else:
+        print(f"{letter} is a consonant.")
+
+
+print('/////////////////////////////////////////')
+
+
+# 6)
+
+words = []
+for _ in range(7):
+    word = input("Enter a word: ")
+    words.append(word)
+
+letter = input("Enter a single character: ")
+
+for word in words:
+    if letter in word:
+        index = word.index(letter)
+        print(f"The index of '{letter}' in '{word}' is {index}.")
+    else:
+        print(f"The letter '{letter}' does not exist in '{word}'.")
+
+
+print('/////////////////////////////////////////')
+
+# 7)
+
+numbers = list(range(1, 1000001))
+
+print("Minimum number:", min(numbers))
+print("Maximum number:", max(numbers))
+print("Sum of numbers:", sum(numbers))
+
+print('/////////////////////////////////////////')
+
+# 8)
+
+numbers = input("Enter a sequence of comma-separated numbers: ")
+
+num_list = numbers.split(",")
+num_tuple = tuple(num_list)
+
+print(num_list)
+print(num_tuple)
+
+print('/////////////////////////////////////////')
+
+
+# 9)
+
+games_won = 0
+games_lost = 0
+
+while True:
+    user_input = input("Enter a number from 1 to 9 (or 'quit' to quit): ")
+
+    if user_input == 'quit':
+        break
+
+    user_number = int(user_input)
+    random_number = random.randint(1, 9)
+
+    if user_number == random_number:
+        print("Winner!")
+        games_won += 1
+    else:
+        print("Better luck next time.")
+        games_lost += 1
+
+print("Total games won:", games_won)
+print("Total games lost:", games_lost)
