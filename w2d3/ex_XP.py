@@ -240,3 +240,29 @@ for item, details in items.items():
     total_cost += price * stock
 
 print(f"The total cost of buying everything in stock is: ${total_cost}.")
+
+
+print('/////////////////////////////////////////')
+
+
+# NINJA
+
+# 1)
+
+manufacturers = "Volkswagen, Toyota, Ford Motor, Honda, Chevrolet"
+
+manufacturers_list = manufacturers.split(", ")
+
+print(f"There are {len(manufacturers_list)} manufacturers in the list.")
+
+manufacturers_list_reverse = sorted(manufacturers_list, reverse=True)
+
+manufacturers_with_o = [
+    manufacturer for manufacturer in manufacturers_list if 'o' in manufacturer.lower()]
+print(
+    f"There are {len(manufacturers_with_o)} manufacturers with the letter 'o' in their name.")
+
+manufacturers_without_i = [
+    manufacturer for manufacturer in manufacturers_list if 'i' not in manufacturer.lower()]
+print(
+    f"There are {len(manufacturers_without_i)} manufacturers without the letter 'i' in their name.")
