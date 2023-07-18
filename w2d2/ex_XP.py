@@ -1,5 +1,6 @@
 import string  # FOR GOLD
 import random  # FOR GOLD
+import math  # USED IN Ninja
 
 # Ex XP
 
@@ -314,3 +315,69 @@ while True:
 
 print("Total games won:", games_won)
 print("Total games lost:", games_lost)
+
+print('/////////////////////////////////////////')
+
+
+# NINJA
+
+# 1)
+
+C = 50
+H = 30
+
+user_input = input("Enter a comma-separated string of numbers: ")
+numbers = user_input.split(",")
+
+results = []
+
+for number in numbers:
+    D = int(number)
+    Q = math.sqrt((2 * C * D) / H)
+    results.append(str(round(Q)))
+
+output = ",".join(results)
+print(output)
+
+print('/////////////////////////////////////////')
+
+# 2)
+
+numbers = [random.randint(-100, 100) for _ in range(10)]
+
+print("List of numbers:", " ".join(str(num) for num in numbers))
+print("Sorted list (descending):", " ".join(str(num)
+      for num in sorted(numbers, reverse=True)))
+print("Sum of numbers:", sum(numbers))
+print("First and last numbers:", [numbers[0], numbers[-1]])
+print("Numbers greater than 50:", [num for num in numbers if num > 50])
+print("Numbers smaller than 10:", [num for num in numbers if num < 10])
+print("Numbers squared:", [num ** 2 for num in numbers])
+unique_numbers = list(set(numbers))
+print("Numbers without duplicates:", unique_numbers,
+      "(count:", len(unique_numbers), ")")
+average = sum(numbers) / len(numbers)
+print("Average of numbers:", average)
+largest_number = max(numbers)
+print("Largest number:", largest_number)
+smallest_number = min(numbers)
+print("Smallest number:", smallest_number)
+
+sum_without_builtin = 0
+for num in numbers:
+    sum_without_builtin += num
+average_without_builtin = sum_without_builtin / len(numbers)
+largest_number_without_builtin = numbers[0]
+smallest_number_without_builtin = numbers[0]
+for num in numbers:
+    if num > largest_number_without_builtin:
+        largest_number_without_builtin = num
+    if num < smallest_number_without_builtin:
+        smallest_number_without_builtin = num
+
+print("Sum (without built-in function):", sum_without_builtin)
+print("Average (without built-in function):", average_without_builtin)
+print("Largest number (without built-in function):",
+      largest_number_without_builtin)
+print("Smallest number (without built-in function):",
+      smallest_number_without_builtin)
