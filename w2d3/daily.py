@@ -23,7 +23,11 @@ items_purchase = {
     "Fan": "$14",
     "Bananas": "$4",
     "Pan": "$100",
-    "Spoon": "$2"
+    "Spoon": "$2",
+    "Phone": "$999",
+    "Speakers": "$300",
+    "Laptop": "$5,000",
+    "PC": "$1200"
 }
 
 wallet = input("Enter the amount of money in your wallet: ")
