@@ -266,3 +266,34 @@ manufacturers_without_i = [
     manufacturer for manufacturer in manufacturers_list if 'i' not in manufacturer.lower()]
 print(
     f"There are {len(manufacturers_without_i)} manufacturers without the letter 'i' in their name.")
+
+print('/////////////////////////////////////////')
+
+
+# Timed #1
+
+input_str = input("Enter a sentence: ")
+
+words = input_str.split()
+reversed_words = words[::-1]
+reversed_sentence = ' '.join(reversed_words)
+
+print("Reversed sentence: ", reversed_sentence)
+
+print('/////////////////////////////////////////')
+
+
+# Timed #2
+
+x = int(input('Enter the Number:'))
+
+divisors_sum = 0
+
+# Find the proper divisors and calculate their sum
+for i in range(1, x):
+    if x % i == 0:
+        divisors_sum += i
+
+is_perfect = divisors_sum == x
+
+print(is_perfect)
