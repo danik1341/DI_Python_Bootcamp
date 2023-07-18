@@ -115,8 +115,6 @@ print('/////////////////////////////////////////')
 users = ["Mickey", "Minnie", "Donald", "Ariel", "Pluto"]
 
 disney_users_A = {}
-disney_users_A_i = {}
-disney_users_A_MnP = {}
 disney_users_B = {}
 disney_users_C = {}
 
