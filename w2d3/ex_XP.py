@@ -146,3 +146,97 @@ for index, user in enumerate(users):
         disney_users_A[user] = index
 print('The Ps and Ms')
 print(disney_users_A)
+
+
+print('/////////////////////////////////////////')
+
+
+# GOLD
+
+# 1)
+
+birthdays = {
+    'Daniel': '1998/01/08',
+    'Brandon Sanderson': '1975/12/19',
+    'Brent Weeks': '1977/03/07',
+    'George R. R. Martin': '1948/09/20',
+    'Frank Herbert': '1920/10/08',
+    'H. P. Lovecraft': '1890/08/20'
+}
+
+print("Welcome! You can look up the birthdays of the people in the list!")
+
+person_name = input("Enter a person's name: ")
+
+if person_name in birthdays:
+    birthday = birthdays[person_name]
+    print(f"The birthday of {person_name} is {birthday}.")
+else:
+    print(f"Sorry, the birthday of {person_name} is not available.")
+
+
+print('/////////////////////////////////////////')
+
+
+# 2)
+
+print("Names in the dictionary:")
+for name in birthdays.keys():
+    print(name)
+
+person_name = input("Enter a person's name: ")
+
+if person_name in birthdays:
+    birthday = birthdays[person_name]
+    print(f"The birthday of {person_name} is {birthday}.")
+else:
+    print(f"Sorry, the birthday of {person_name} is not available.")
+
+
+print('/////////////////////////////////////////')
+
+# 3)
+
+new_name = input("Enter a new person's name: ")
+new_birthday = input("Enter their birthday (YYYY/MM/DD): ")
+
+birthdays[new_name] = new_birthday
+
+person_name = input("Enter a person's name: ")
+
+if person_name in birthdays:
+    birthday = birthdays[person_name]
+    print(f"The birthday of {person_name} is {birthday}.")
+else:
+    print(f"Sorry, the birthday of {person_name} is not available.")
+
+
+print('/////////////////////////////////////////')
+
+# 4)
+
+items = {
+    "banana": 4,
+    "apple": 2,
+    "orange": 1.5,
+    "pear": 3
+}
+
+for item, price in items.items():
+    print(f"The price of {item} is {price}.")
+
+items = {
+    "banana": {"price": 4, "stock": 10},
+    "apple": {"price": 2, "stock": 5},
+    "orange": {"price": 1.5, "stock": 24},
+    "pear": {"price": 3, "stock": 1}
+}
+
+total_cost = 0
+
+for item, details in items.items():
+    price = details["price"]
+    stock = details["stock"]
+    total_cost += price * stock
+
+print(f"The total cost of buying everything in stock is: ${total_cost}.")
