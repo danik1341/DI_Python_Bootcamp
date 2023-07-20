@@ -17,7 +17,7 @@ def player_input(player):
         This function takes the player (X or O) as input and prompts them to enter a position (a number from 1 to 9). 
         The function then returns the index in the board list where the player's mark should be placed.
     '''
-    posotion = int(input(f'Player {player}, enter a position (1-9)')) - 1
+    posotion = int(input(f'Player {player}, enter a position (1-9) ')) - 1
     return posotion
 
 
