@@ -1,6 +1,10 @@
+import math
+import random
+
 # EX XP
 
 # 1)
+
 
 class Cat:
     def __init__(self, cat_name, cat_age):
@@ -154,3 +158,125 @@ ramat_gan_safari.get_animals()
 ramat_gan_safari.get_groups()
 
 print('/////////////////////////////////////////')
+
+
+# EX GOLD
+
+# 1)
+
+class Circle:
+    def __init__(self, rad=1.0):
+        self.rad = rad
+
+    def perimeter(self):
+        return 2 * math.pi * self.rad
+
+    def area(self):
+        return math.pi * self.rad ** 2
+
+    def print_definition(self):
+        print(
+            f"A circle is a closed curve where all points are equidistant from the center point. It has a radius of {self.radius} units.")
+
+
+circle1 = Circle()
+circle2 = Circle(5.0)
+
+print("Circle 1:")
+print("Perimeter:", circle1.perimeter())
+print("Area:", circle1.area())
+circle1.print_definition()
+
+print("\nCircle 2:")
+print("Perimeter:", circle2.perimeter())
+print("Area:", circle2.area())
+circle2.print_definition()
+
+
+print('/////////////////////////////////////////')
+
+# 2)
+
+
+class MyList:
+    def __init__(self, letters):
+        self.mylist = letters
+
+    def reversed_list(self):
+        return list(reversed(self.mylist))
+
+    def sorted_list(self):
+        return sorted(self.mylist)
+
+    def random_numbers_list(self):
+        return [random.randint(1, 100) for _ in range(len(self.mylist))]
+
+
+letters = ['a', 'b', 'c', 'd', 'e']
+my_list = MyList(letters)
+
+print("Original List:", my_list.mylist)
+print("Reversed List:", my_list.reversed_list())
+print("Sorted List:", my_list.sorted_list())
+print("Random Numbers List:", my_list.random_numbers_list())
+
+
+print('/////////////////////////////////////////')
+
+
+# 3)
+
+class MenuManager:
+    def __init__(self):
+        self.menu = [
+            {"name": "Soup", "price": 10, "spice": "B", "gluten": False},
+            {"name": "Hamburger", "price": 15, "spice": "A", "gluten": True},
+            {"name": "Salad", "price": 18, "spice": "A", "gluten": False},
+            {"name": "French Fries", "price": 5, "spice": "C", "gluten": False},
+            {"name": "Beef bourguignon", "price": 25, "spice": "B", "gluten": True},
+        ]
+
+    def add_item(self, name, price, spice, gluten):
+        new_dish = {'name': name, 'price': price,
+                    'spice': spice, "gluten": gluten}
+        self.menu.append(new_dish)
+        print(f'{name} has been added to the menu')
+
+    def update_item(self, name, price, spice, gluten):
+        for dish in self.menu:
+            if dish['name'] == name:
+                dish['price'] = price
+                dish['spice'] = spice
+                dish['gluten'] = gluten
+                print(f"{name} has been updated in the menu.")
+                return
+
+        print(f'{name} is not in the menu.')
+
+    def remove_item(self, name):
+        for dish in self.menu:
+            if dish['name'] == name:
+                self.menu.remove(dish)
+                print(f"{name} has been removed from the menu.")
+                return
+
+        print(f"{name} is not in the menu. Cannot remove.")
+
+
+manager = MenuManager()
+print("Current Menu:")
+for dish in manager.menu:
+    print(dish)
+
+print("\nAdding new dish to the menu...")
+manager.add_item("Pasta", 20, "A", False)
+
+print("\nUpdating dish in the menu...")
+manager.update_item("Soup", 12, "C", True)
+
+print("\nRemoving dish from the menu...")
+manager.remove_item("Hamburger")
+
+print("\nUpdated Menu:")
+for dish in manager.menu:
+    print(dish)
