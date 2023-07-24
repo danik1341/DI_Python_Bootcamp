@@ -137,3 +137,89 @@ dog3 = PetDog("Rex", 3, 14)
 dog1.train()
 dog1.play(dog2.name, dog3.name)
 dog1.do_a_trick()
+
+
+print('/////////////////////////////////////////')
+
+
+# EX XP +
+
+# 1)
+
+class Family:
+    def __init__(self, members: list, last_name: str):
+        self.members = members
+        self.last_name = last_name
+
+    def born(self, **kwargs):
+        new_child = kwargs
+        self.members.append(new_child)
+        print(
+            f"Congratulations! {new_child['name']} has been born into the {self.last_name} family.")
+
+    def is_18(self, name):
+        for member in self.members:
+            if member['name'] == name:
+                return member['age'] >= 18
+        return False
+
+    def family_presentation(self):
+        print(f"Family Name: {self.last_name}")
+        print("Family Members:")
+        for member in self.members:
+            print(member['name'])
+
+
+initial_members = [
+    {'name': 'Michael', 'age': 35, 'gender': 'Male', 'is_child': False},
+    {'name': 'Sarah', 'age': 32, 'gender': 'Female', 'is_child': False}
+]
+
+my_family = Family(initial_members, "Smith")
+
+my_family.born(name='Emma', age=0, gender='Female', is_child=True)
+
+print(my_family.is_18('Michael'))  # Output: True
+print(my_family.is_18('Emma'))  # Output: False
+
+my_family.family_presentation()
+
+print('/////////////////////////////////////////')
+
+
+# 2)
+
+class TheIncredibles(Family):
+    def __init__(self, members, last_name):
+        super().__init__(members, last_name)
+
+    def use_power(self, name):
+        for member in self.members:
+            if member['name'] == name and member['age'] >= 18:
+                print(f"{name}'s power is: {member['power']}")
+                return
+            raise Exception(
+                f"{name} is not over 18 years old or not in the family.")
+
+    def incredible_presentation(self):
+        super().family_presentation()
+        print("Members' Incredible Names and Powers:")
+        for member in self.members:
+            print(f"{member['incredible_name']} - {member['power']}")
+
+
+initial_members = [
+    {'name': 'Michael', 'age': 35, 'gender': 'Male', 'is_child': False,
+        'power': 'fly', 'incredible_name': 'MikeFly'},
+    {'name': 'Sarah', 'age': 32, 'gender': 'Female', 'is_child': False,
+        'power': 'read minds', 'incredible_name': 'SuperWoman'}
+]
+
+the_incredibles_family = TheIncredibles(initial_members, "Incredibles")
+
+the_incredibles_family.incredible_presentation()
+
+the_incredibles_family.born(name='Baby Jack', age=0, gender='Male',
+                            is_child=True, power='Unknown Power', incredible_name='Jack')
+
+the_incredibles_family.incredible_presentation()
