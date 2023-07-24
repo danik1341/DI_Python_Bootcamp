@@ -61,7 +61,7 @@
 # The code above works but I feel as if it is too complex and I don't like the way I over complicated it.
 # refer to it if you must but if I after a couple of mins forgot completely what is going on here Im afraid you would too.
 
-# regardless take a look at my madness if you wish here is a more suitable version of the code -
+# regardless take a look at my madness if you wish. Here is a more suitable version of the code -
 
 class Pagination:
     def __init__(self, items=None, pageSize=10):
