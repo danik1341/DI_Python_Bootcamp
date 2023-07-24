@@ -281,8 +281,10 @@ print("\nUpdated Menu:")
 for dish in manager.menu:
     print(dish)
 
+print('/////////////////////////////////////////')
 
 # XP NINJA
+
 
 class Phone:
     def __init__(self, phone_number):
