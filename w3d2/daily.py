@@ -29,7 +29,7 @@ class Pagination:
         self.currentPage = self.totalPages
         return self
 
-    def goToPage(self, pageNum, pageSize=None):  # Add pageSize as a parameter
+    def goToPage(self, pageNum, pageSize=None):
         self.totalPages = math.ceil(
             len(self.items) / (self.pageSize if pageSize is None else pageSize))
         self.currentPage = max(min(int(pageNum), self.totalPages), 1)
