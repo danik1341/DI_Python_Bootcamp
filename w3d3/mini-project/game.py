@@ -49,19 +49,19 @@ class Warrior(Character):
         damage = 2 * self.attack
         self.life += int(0.5 * self.attack)
         print(f"{self.name} engages in a brawl with {other_character.name}. "
-              f"{self.name} bathes in his opponent's blood gaining {int(0.5 * self.attack)} life and {other_character.name} sufferes a devastating blow, reducing his life by {damage}.")
+              f"{self.name} bathes in their opponent's blood gaining {int(0.5 * self.attack)} life and {other_character.name} sufferes a devastating blow, reducing their life by {damage}.")
         print("|----------------------------------------------------------------|")
 
     def train(self):
         self.attack += 2
         self.life += 2
-        print(f"{self.name} would not sit idle. Like a wet stone to a sword, {self.name} trains mind, body and soul, gaining 2 point to his attack and life")
+        print(f"{self.name} would not sit idle. Like a wet stone to a sword, {self.name} trains mind, body and soul, gaining 2 point to their attack and life")
         print("|----------------------------------------------------------------|")
 
     def roar(self, other_character):
         other_character.attack -= 3
         print(
-            f"Lok'tar Ogar! {other_character.name} cowers in fear from {self.name} mighty roar, reducing his attack points by 3")
+            f"Lok'tar Ogar! {other_character.name} cowers in fear from {self.name} mighty roar, reducing their attack points by 3")
         print("|----------------------------------------------------------------|")
 
 
@@ -75,13 +75,13 @@ class Mage(Character):
     def curse(self, other_character):
         other_character.attack -= 2
         print(
-            f"Karabos kor koramond! {other_character.name} cursed by {self.name} vile magic, reducing his attack points by 2")
+            f"Karabos kor koramond! {other_character.name} cursed by {self.name} vile magic, reducing their attack points by 2")
         print("|----------------------------------------------------------------|")
 
     def summon(self):
         self.attack += 3
         print(
-            f"Chaos comes at my command! {self.name} summons a chaos minion increasing his attack by 3")
+            f"Chaos comes at my command! {self.name} summons a chaos minion increasing their attack by 3")
         print("|----------------------------------------------------------------|")
 
     def cast_spell(self, other_character):
@@ -91,9 +91,9 @@ class Mage(Character):
 
 
 if __name__ == "__main__":
-    druid = Druid("Forest Guardian")
-    warrior = Warrior("Braveheart")
-    mage = Mage("Wizardry")
+    druid = Druid("Buumi")
+    warrior = Warrior("Dogwaggle")
+    mage = Mage("Jorsin")
 
     druid.meditate()
     druid.animal_help()
