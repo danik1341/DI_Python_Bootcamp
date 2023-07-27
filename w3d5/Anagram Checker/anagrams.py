@@ -2,6 +2,13 @@ from anagram_checker import AnagramChecker
 
 
 def get_user_input():
+    """
+    Get a word from the user and perform data validation.
+
+    Returns:
+    str or None: The user's input word, or None if the user chooses to quit.
+
+    """
     while True:
         word = input("Enter a word (or 'q' to quit): ").strip()
         print(word)
@@ -17,6 +24,12 @@ def get_user_input():
 
 
 def display_anagrams(anagrams):
+    """
+    Display the anagrams of a word.
+
+    Parameters:
+    anagrams (list): A list of anagrams for the word.
+    """
     if anagrams:
         print(f"Anagrams for your word: {', '.join(anagrams)}.")
     else:
@@ -24,6 +37,14 @@ def display_anagrams(anagrams):
 
 
 def main():
+    """
+    The main function that handles the user interface for the Anagram Checker.
+
+    The user can input a word and check if it is a valid English word.
+    If the word is valid, the program finds and displays all anagrams for that word.
+    The program will continue to prompt the user for words until the user chooses to quit.
+
+    """
     word_list_file = 'w3d5/Anagram Checker/text_file.txt'
     anagram_checker = AnagramChecker(word_list_file)
 
