@@ -2,6 +2,35 @@ import random
 
 
 class Game:
+    """
+    A class that represents a single game of Rock-Paper-Scissors against the computer.
+
+    Attributes:
+        None
+
+    Methods:
+        get_user_item(self): Ask the user to select an item (rock/paper/scissors).
+            Keeps asking until the user has selected one of the items.
+            Returns the selected item.
+
+        get_computer_item(self): Selects rock/paper/scissors at random for the computer.
+            Returns the computer's selected item.
+
+        get_game_result(self, user_item, computer_item): Determines the result of the game.
+            Parameters:
+                user_item (str): The user's chosen item (rock/paper/scissors).
+                computer_item (str): The computer's chosen (random) item (rock/paper/scissors).
+            Returns:
+                str: 'win' if the user has won, 'draw' if the user and the computer got the same item,
+                    'loss' if the user has lost.
+
+        play(self): Runs a single game of Rock-Paper-Scissors.
+            Asks the user for their item choice and the computer selects its item randomly.
+            Compares the user's item with the computer's item to determine the game result.
+            Prints the output of the game, indicating whether the user won, lost, or drew.
+            Returns the result of the game as a string: 'win', 'draw', or 'loss'.
+    """
+
     def get_user_item(self):
         while True:
             user_input = input("Select (r)ock, (p)aper, or (s)cissors: ")

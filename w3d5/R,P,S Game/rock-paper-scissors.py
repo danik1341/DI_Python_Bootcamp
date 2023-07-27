@@ -2,6 +2,15 @@ from game import Game
 
 
 def get_user_menu_choice():
+    """
+    Displays a simple menu to the user and gets their choice.
+
+    Returns:
+        str: 'play' if the user wants to start a new game,
+             'scores' if the user wants to view game scores,
+             'q' if the user wants to quit the program.
+    """
+
     while True:
         print("Menu:")
         print("1. Play a new game")
@@ -19,6 +28,16 @@ def get_user_menu_choice():
 
 
 def print_results(results):
+    """
+    Prints the results of the games played.
+
+    Parameters:
+        results (dict): A dictionary containing the results of the games played.
+            It should have the keys 'win', 'loss', and 'draw', representing
+            the number of wins, losses, and draws respectively.
+    Returns:
+        None
+    """
     print("Game Results:")
     print(f"Wins: {results['win']}")
     print(f"Losses: {results['loss']}")
@@ -27,6 +46,19 @@ def print_results(results):
 
 
 def main():
+    """
+    The main function of the Rock-Paper-Scissors game.
+
+    Runs a game loop that displays the main menu and allows the user to:
+        - Start a new game
+        - View game scores
+        - Quit the program
+
+    During the game loop, it keeps track of the results of each game played.
+
+    Returns:
+        None
+    """
     results = {'win': 0, 'loss': 0, 'draw': 0}
 
     while True:
