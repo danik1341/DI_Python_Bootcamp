@@ -1,4 +1,7 @@
+import json
 import random
+
+# 1)
 
 
 def get_words_from_file():
@@ -38,5 +41,38 @@ def main():
         return
 
 
-if __name__ == "__main__":
-    main()
+print('/////////////////////////////////////////')
+
+
+# 2)
+
+sampleJson = """{ 
+   "company":{ 
+      "employee":{ 
+         "name":"emma",
+         "payable":{ 
+            "salary":7000,
+            "bonus":800
+         }
+      }
+   }
+}"""
+
+data = json.loads(sampleJson)
+
+salary = data['company']['employee']['payable']['salary']
+print("Salary:", salary)
+
+data['company']['employee']['birth_date'] = '1998-01-01'
+
+with open('w3d4/updated_data.json', 'w') as file:
+    json.dump(data, file, indent=4)
+
+
+print('/////////////////////////////////////////')
+
+
+# Uncomment to run the first tansk
+
+# if __name__ == "__main__":
+#     main()
