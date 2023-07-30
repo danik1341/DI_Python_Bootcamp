@@ -5,7 +5,11 @@ CREATE TABLE items ( id serial primary key, item varchar(50), price int );
 CREATE TABLE customers ( id serial primary key, first_name varchar(50), last_name varchar(50) );
 INSERT INTO items (item, price) values ('Small Desk', 100), ('Large Desk', 300), ('Fan', 80);
 INSERT INTO customers (first_name, last_name) values 
-('Greg', 'Jones'), ('Sandra', 'Jones'), ('Scott', 'Scott'), ('Trevor', 'Green'), ('Melanie', 'Johnson');
+	('Greg', 'Jones'), 
+	('Sandra', 'Jones'), 
+	('Scott', 'Scott'), 
+	('Trevor', 'Green'), 
+	('Melanie', 'Johnson');
 
 SELECT  *
 FROM items;
@@ -36,7 +40,13 @@ WHERE first_name != 'Scott';
 
 CREATE TABLE students ( id serial primary key, first_name varchar(50), last_name varchar(50), birth_date date );
 INSERT INTO students (first_name, last_name, birth_date) values 
-('Marc', 'Benichou', '1998-11-02'), ('Yoan', 'Cohen', '2010-12-03'), ('Lea', 'Benichou', '1987-07-27'), ('Amelia', 'Dux', '1996-04-07'), ('David', 'Grez', '2003-06-14'), ('Omer', 'Simpson', '1980-10-03'), ('Daniel', 'Shmidet', '1998-01-08');
+	('Marc', 'Benichou', '1998-11-02'), 
+	('Yoan', 'Cohen', '2010-12-03'), 
+	('Lea', 'Benichou', '1987-07-27'), 
+	('Amelia', 'Dux', '1996-04-07'), 
+	('David', 'Grez', '2003-06-14'), 
+	('Omer', 'Simpson', '1980-10-03'), 
+	('Daniel', 'Shmidet', '1998-01-08');
 
 SELECT  *
 FROM students;
@@ -108,23 +118,21 @@ from students;
 -- EX XP Gold
 -- 1)
 
-SELECT  first_name
-       ,last_name
-       ,birth_date
-FROM students
-ORDER BY last_name
-LIMIT 4;
-
-SELECT  first_name
-       ,last_name
-       ,birth_date
-FROM students
-ORDER BY birth_date desc
-LIMIT 1;
-
-SELECT  first_name
-       ,last_name
-       ,birth_date
-FROM students
-ORDER BY id
-LIMIT 3 offset 2
+select first_name,
+	last_name,
+	birth_date
+from students
+order by last_name
+limit 4;
+select first_name,
+	last_name,
+	birth_date
+from students
+order by birth_date desc
+limit 1;
+select first_name,
+	last_name,
+	birth_date
+from students
+order by id
+limit 3 offset 2
