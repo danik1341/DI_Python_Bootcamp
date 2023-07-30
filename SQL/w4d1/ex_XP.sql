@@ -84,3 +84,31 @@ select * from students where id = 1 and id = 3;
 
 select * from students where birth_date >= '2000-01-01';
 
+-- This is for the daily challange, as I dont have a actors table I can use the students table to achive the same results
+
+-- Daily challange
+
+-- 1)
+
+select count(*) as total_studens from students;
+
+
+-- 2)
+
+-- When you try to add a new student with some blank fields (i.e., NULL values), 
+
+-- the outcome will depend on the table's schema and the constraints applied to the columns.
+
+-- If the table allows NULL values for all columns and there are no constraints that restrict the insertion of NULL values, 
+
+-- the new student will be added without any issues, and the blank fields will be stored as NULL.
+
+-- If the table has some columns with NOT NULL constraints (meaning those columns cannot have NULL values), 
+
+-- and you attempt to insert a new student with blank fields for those columns, 
+
+-- the insertion will fail with an error indicating that you are violating the NOT NULL constraint.
+
+-- For example, if first_name and last_name columns have NOT NULL constraints, 
+
+-- and you try to add a new student with blank values for these columns, the insertion will fail.
