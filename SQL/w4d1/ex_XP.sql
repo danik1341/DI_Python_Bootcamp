@@ -112,3 +112,20 @@ select count(*) as total_studens from students;
 -- For example, if first_name and last_name columns have NOT NULL constraints, 
 
 -- and you try to add a new student with blank values for these columns, the insertion will fail.
+
+
+-- EX XP Gold
+
+-- 1)
+
+select first_name, last_name, birth_date from students
+order by last_name
+limit 4;
+
+select first_name, last_name, birth_date from students
+order by birth_date desc
+limit 1;
+
+select first_name, last_name, birth_date from students
+order by id
+limit 3 offset 2;
