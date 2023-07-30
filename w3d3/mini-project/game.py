@@ -88,21 +88,3 @@ class Mage(Character):
         other_character.life -= self.attack/self.life
         print(f"{other_character.name} burns in arcane fire. {self.name} laugths as {other_character.name}'s flesh sizzling reducing their life by {self.attack/self.life}")
         print("|----------------------------------------------------------------|")
-
-
-if __name__ == "__main__":
-    druid = Druid("Buumi")
-    warrior = Warrior("Dogwaggle")
-    mage = Mage("Jorsin")
-
-    druid.meditate()
-    druid.animal_help()
-    druid.fight(warrior)
-
-    warrior.brawl(druid)
-    warrior.train()
-    warrior.roar(mage)
-
-    mage.curse(warrior)
-    mage.summon()
-    mage.cast_spell(druid)
