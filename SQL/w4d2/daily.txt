@@ -1,0 +1,4 @@
+1) 0, because of the NULL
+2) 2, also because of the NULL
+3) 0, because of the NULL again, if you are checking with NULL it fails
+4) 2, NULL fails to count
