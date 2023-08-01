@@ -310,3 +310,48 @@ FROM purchases p
 --------------------------
 -- adding a row with a blank item reference will work if the "item_id" column allows NULL values or is not defined as a foreign key. 
 -- However, if it is defined as a foreign key with a NOT NULL constraint, the database will not allow inserting a row without a valid item reference.
+--------------------------
+-- NINJA
+SELECT first_name,
+    last_name
+FROM customers
+ORDER BY last_name,
+    first_name OFFSET (
+        SELECT COUNT(*)
+        FROM customers
+    ) - 2;
+--------------------------
+DELETE FROM purchases
+WHERE customer_id IN (
+        SELECT id
+        FROM customers
+        WHERE first_name = 'Scott'
+    );
+--------------------------
+-- No, after executing the DELETE query to remove all purchases made by Scott from the "purchases" table, 
+-- Scott's purchase records will be deleted from the "purchases" table, 
+-- but Scott will still exist in the "customers" table.
+--------------------------
+SELECT p.id,
+    p.customer_id,
+    c.first_name,
+    c.last_name,
+    p.item_id,
+    p.quantity_purchased
+FROM purchases p
+    LEFT JOIN customers c ON p.customer_id = c.id;
+-- With this query, you will get all purchases, 
+-- and Scott's order will appear with empty/blank values for first and last name instead of showing Scott's actual name.
+--------------------------
+SELECT p.id,
+    p.customer_id,
+    c.first_name,
+    c.last_name,
+    p.item_id,
+    p.quantity_purchased
+FROM purchases p
+    JOIN customers c ON p.customer_id = c.id
+WHERE NOT (
+        c.first_name = 'Scott'
+        AND c.last_name = 'Scott'
+    );
