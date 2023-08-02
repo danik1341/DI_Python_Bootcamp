@@ -232,3 +232,18 @@ WHERE (
                     AND LOWER(last_name) = 'mahan'
             )
     );
+--------------------------
+-- My solution isn't great.... So this is Lise's solution
+SELECT film.title,
+    film.replacement_cost
+FROM film
+    JOIN inventory ON film.film_id = inventory.film_id
+    JOIN rental ON inventory.inventory_id = rental.inventory_id
+    JOIN customer ON customer.customer_id = rental.customer_id
+WHERE customer.first_name = 'Matthew'
+    AND customer.last_name = 'Mahan'
+    AND (
+        title ILIKE '%boat'
+        OR description ILIKE '%boat%'
+    )
+ORDER BY film.replacement_cost DESC
