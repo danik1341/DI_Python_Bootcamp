@@ -36,7 +36,7 @@ all_people = [
   }
 ]
 
-def display_person(req):
+def display_person(request):
     person_info = f"Name: {name}, Age: {age}, Country: {country}"
     return HttpResponse(person_info)
 
