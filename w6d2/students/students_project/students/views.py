@@ -10,9 +10,21 @@ from .models import Student
 
 class student_list(APIView):
     def get(self, request, *args, **kwargs):
-        students = Student.objects.all()
+        # updated for daily challange -
+        date_joined_param = request.GET.get('date_joined')
+        
+        if date_joined_param:
+            students = Student.objects.filter(date_joined=date_joined_param)
+        else:
+            students = Student.objects.all()
+            
         serializer = StudentSerializer(students, many=True)
         return Response(serializer.data)
+    
+        # old code without the filter -        
+        # students = Student.objects.all()
+        # serializer = StudentSerializer(students, many=True)
+        # return Response(serializer.data)
     
     def post(self, request, *args, **kwargs):
         serializer = StudentSerializer(data = request.data)
