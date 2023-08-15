@@ -2,13 +2,16 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
 
 from .serializers import DepartmentSerializer, EmployeeSerializer, ProjectSerializer, TaskSerializer
 from .models import Department, Employee, Project, Task
+from .permissions import IsDepartmentAdmin
 
 # Create your views here.
 
 class DepartmentAPIView(APIView):
+    permission_classes = [IsAuthenticated, IsDepartmentAdmin]
     def get(self, request, pk=None):
         if pk is None:
             departments = Department.objects.all()
@@ -43,6 +46,7 @@ class DepartmentAPIView(APIView):
 
 
 class EmployeeAPIView(APIView):
+    permission_classes = [IsAuthenticated, IsDepartmentAdmin]
     def get(self, request, pk=None):
         if pk is None:
             employees = Employee.objects.all()
@@ -77,6 +81,7 @@ class EmployeeAPIView(APIView):
 
 
 class ProjectAPIView(APIView):
+    permission_classes = [IsAuthenticated, IsDepartmentAdmin]
     def get(self, request, pk=None):
         if pk is None:
             projects = Project.objects.all()
@@ -111,6 +116,7 @@ class ProjectAPIView(APIView):
 
 
 class TaskAPIView(APIView):
+    permission_classes = [IsAuthenticated, IsDepartmentAdmin]
     def get(self, request, pk=None):
         if pk is None:
             tasks = Task.objects.all()
