@@ -51,29 +51,29 @@ for (let i = 0; i < colors.length; i++) {
 
 // 3)
 
-// const userInput = prompt("Please enter a number:");
-// console.log("User input:", userInput);
-// console.log("Data type:", typeof userInput);
-// const numericValue = parseFloat(userInput);
-// console.log("Parsed as a number:", numericValue);
-// console.log("Data type after parsing:", typeof numericValue);
+const userInput = prompt("Please enter a number:");
+console.log("User input:", userInput);
+console.log("Data type:", typeof userInput);
+const numericValue = parseFloat(userInput);
+console.log("Parsed as a number:", numericValue);
+console.log("Data type after parsing:", typeof numericValue);
 
-// while (true) {
-//     const userInput = prompt("Please enter a number:");
+while (true) {
+    const userInput = prompt("Please enter a number:");
 
-//     const numericValue = parseFloat(userInput);
+    const numericValue = parseFloat(userInput);
 
-//     if(!isNaN(numericValue)){
-//         if(numericValue < 10 ){
-//             console.log("Number is smaller than 10. Please enter a new number.");
-//         } else {
-//             console.log("Number is not smaller than 10. Exiting loop.");
-//             break;
-//         }
-//     } else {
-//         console.log("Invalid input. Please enter a valid number.");
-//     }
-// }
+    if(!isNaN(numericValue)){
+        if(numericValue < 10 ){
+            console.log("Number is smaller than 10. Please enter a new number.");
+        } else {
+            console.log("Number is not smaller than 10. Exiting loop.");
+            break;
+        }
+    } else {
+        console.log("Invalid input. Please enter a valid number.");
+    }
+}
 
 // 4)
 
