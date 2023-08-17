@@ -3,7 +3,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bike_store.settings')
 import django
 django.setup()
 
-from rent.models import Customer, Address
+from rent.models import Customer, Address, RentalStation
 from faker import Faker
 
 fake = Faker()
@@ -30,4 +30,22 @@ def create_customers(number):
 
     print(f"CREATED {number} Customers")
 
+def create_rental_stations(number):
+    for _ in range(number):
+        station = RentalStation(
+            name=fake.street_address(),
+            capacity=fake.random_int(min=1, max=100),
+            address=Address.objects.create(
+                address=fake.street_address(),
+                address2=fake.secondary_address(),
+                city=fake.city(),
+                country=fake.country(),
+                postal_code=fake.zipcode()
+            )
+        )
+        station.save()
+
+    print(f"CREATED {number} Rental Stations")
+
 create_customers(100)
+create_rental_stations(20)

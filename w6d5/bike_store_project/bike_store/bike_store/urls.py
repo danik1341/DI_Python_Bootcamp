@@ -17,7 +17,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from rent.views import CustomerAPIView, VehicleAPIView, VehicleTypeAPIView, VehicleSizeAPIView, RentalAPIView, RentalRateAPIView, RentalStationAPIView, AddressAPIView, VehicleAtRentalStationAPIView
+from rent.views import (
+    CustomerAPIView, 
+    VehicleAPIView, 
+    VehicleTypeAPIView, 
+    VehicleSizeAPIView, 
+    RentalAPIView, 
+    RentalRateAPIView, 
+    RentalStationAPIView, 
+    AddressAPIView, 
+    VehicleAtRentalStationAPIView, 
+    MonthlyRentalStats,
+    PopularRentalStation,
+    PopularVehicleType,
+    )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -49,4 +62,8 @@ urlpatterns = [
 
     path('rent/vehicle-at-rental-station/', VehicleAtRentalStationAPIView.as_view(), name='vehicle-at-rental-station-operations'),
     path('rent/vehicle-at-rental-station/<int:pk>/', VehicleAtRentalStationAPIView.as_view(), name='vehicle-at-rental-station-detail'),
+    
+    path('rent/stats/monthly/', MonthlyRentalStats.as_view(), name='monthly-rental-stats'),
+    path('rent/stats/popular_station/', PopularRentalStation.as_view(), name='popular-rental-station'),
+    path('rent/stats/popular_vehicle_type/', PopularVehicleType.as_view(), name='popular-vehicle-type-stats'),
 ]

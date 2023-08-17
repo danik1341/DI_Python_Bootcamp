@@ -50,7 +50,7 @@ class Rental(models.Model):
     vehicle = models.ForeignKey(Vehicle, on_delete=models.CASCADE)
     
     def __str__(self):
-        return f'Rental of: {self.customer}, vehicle: {self.vehicle}, on date: {self.date_date}, due to return at: {self.return_date}'
+        return f'Rental of: {self.customer}, vehicle: {self.vehicle}, on date: {self.rental_date}, due to return at: {self.return_date}'
 
 class RentalRate(models.Model):
     daily_rate = models.DecimalField(max_digits=5, decimal_places=2)
@@ -72,6 +72,7 @@ class VehicleAtRentalStation(models.Model):
     arrival_date = models.DateTimeField()
     departure_date = models.DateField(null=True, blank=True)
     vehicle = models.ForeignKey(Vehicle, on_delete=models.CASCADE)
+    station = models.ForeignKey(RentalStation, on_delete=models.CASCADE)
     
     def __str__(self):
         return f'Vehicle: {self.vehicle}, arrival date: {self.arrival_date}, departure date: {self.departure_date}'
