@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Multiple Event Listeners</title>
+    <style>
+      .changeable {
+        position: absolute;
+        display: inline-block;
+        padding: 10px;
+        border: 1px solid black;
+        margin: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="changeable">Hover me or click me</div>
+
+    <script>
+      const changeableElement = document.querySelector(".changeable");
+
+      // Change position x on click
+      changeableElement.addEventListener("click", () => {
+        const newX = Math.random() * window.innerWidth;
+        changeableElement.style.left = `${newX}px`;
+      });
+
+      // Change position y on double click
+      changeableElement.addEventListener("dblclick", () => {
+        const newY = Math.random() * window.innerHeight;
+        changeableElement.style.top = `${newY}px`;
+      });
+
+      // Change color on mouseover
+      changeableElement.addEventListener("mouseover", () => {
+        const randomColor =
+          "#" + Math.floor(Math.random() * 16777215).toString(16);
+        changeableElement.style.backgroundColor = randomColor;
+      });
+
+      // Change font size on mouseout
+      changeableElement.addEventListener("mouseout", () => {
+        const newSize = Math.floor(Math.random() * 40) + 10;
+        changeableElement.style.fontSize = `${newSize}px`;
+      });
+    </script>
+  </body>
+</html>
