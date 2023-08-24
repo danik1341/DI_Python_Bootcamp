@@ -127,7 +127,7 @@ const renderRobotCards = () => {
     noResultsMessage.style = "background-image: url('images/card-pattern.png')";
 
     const image = document.createElement("img");
-    image.className = "w-[80%] rounded-full bg-slate-600";
+    image.className = "w-[80%] rounded-full";
     image.src = donBot.image;
     image.alt = donBot.name;
 
