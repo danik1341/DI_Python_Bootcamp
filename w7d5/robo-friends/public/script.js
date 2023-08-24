@@ -75,7 +75,7 @@ const donBot = {
   name: "Donbot",
   text: "There's no one here, capiche?",
   userText: "no search results found",
-  image: "images/donbot.png",
+  image: "images/Donbot.png",
 };
 
 const robotContainer = document.getElementById("robotContainer");
