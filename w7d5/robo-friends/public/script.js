@@ -71,6 +71,13 @@ const robots = [
   },
 ];
 
+const donBot = {
+  name: "Donbot",
+  text: "There's no one here, capiche?",
+  userText: "no search results found",
+  image: "images/donbot.png",
+};
+
 const robotContainer = document.getElementById("robotContainer");
 
 const createRobotCard = (robot) => {
@@ -113,10 +120,40 @@ const renderRobotCards = () => {
     robot.name.toLowerCase().includes(searchInput)
   );
 
-  filteredRobots.forEach((robot) => {
-    const card = createRobotCard(robot);
-    robotContainer.appendChild(card);
-  });
+  if (filteredRobots.length === 0) {
+    const noResultsMessage = document.createElement("div");
+    noResultsMessage.className =
+      "flex flex-col items-center justify-center max-w-sm lg:max-w-md lg:w-80 lg:w-[28rem] lg:h-[35rem] min-h-full m-2 overflow-hidden rounded shadow-lg h-[25rem] bg-teal-400 bg-fixed bg-center";
+    noResultsMessage.style = "background-image: url('images/card-pattern.png')";
+
+    const image = document.createElement("img");
+    image.className = "w-[80%] rounded-full bg-slate-600";
+    image.src = donBot.image;
+    image.alt = donBot.name;
+
+    const content = document.createElement("div");
+    content.className = "max-w-sm px-6 mt-5 tracking-[-0.04em] lg:mt-14";
+
+    const text = document.createElement("h1");
+    text.className = "mb-2 text-xl font-bold lg:text-3xl";
+    text.textContent = donBot.text;
+
+    const userText = document.createElement("h2");
+    userText.className = "mb-2 text-lg font-semibold lg:text-xl";
+    userText.textContent = donBot.userText;
+
+    content.appendChild(text);
+    content.appendChild(userText);
+    noResultsMessage.appendChild(image);
+    noResultsMessage.appendChild(content);
+
+    robotContainer.appendChild(noResultsMessage);
+  } else {
+    filteredRobots.forEach((robot) => {
+      const card = createRobotCard(robot);
+      robotContainer.appendChild(card);
+    });
+  }
 };
 
 renderRobotCards();
