@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class="w-full h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hello Coders!</title>
+  </head>
+  <body class="flex flex-col w-full h-full">
+    <nav
+      class="flex flex-row items-center w-full space-x-5 bg-green-500 min-h-[5rem] h-20"
+    >
+      <div id="logo" class="mx-3 text-sm md:mx-3 md:text-3xl font-sega">
+        ROBOFRIENDS
+      </div>
+      <div
+        class="md:flex-grow flex items-center justify-center lg:max-w-[70%] max-w-[60%] md:mx-5 h-[40%]"
+      >
+        <input
+          id="searchInput"
+          class="w-full h-full pl-5 bg-gray-200 rounded"
+          placeholder="Search..."
+        />
+      </div>
+    </nav>
+    <div
+      id="hero"
+      class="relative flex-grow w-full bg-fixed bg-purple-600 bg-opacity-50 bg-center bg-no-repeat bg-cover bg-blend-overlay"
+      style="background-image: url('images/circuit-pattern.png')"
+    >
+      <div
+        class="flex flex-wrap items-center justify-center p-5"
+        id="robotContainer"
+      >
+        <!-- Robot cards will be placed here -->
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
