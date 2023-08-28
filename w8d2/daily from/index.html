@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <form id="myForm">
+      <label for="name">First Name:</label>
+      <input type="text" id="name" name="name" /><br /><br />
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" /><br /><br />
+      <button type="submit">Send</button>
+    </form>
+
+    <div id="jsonData"></div>
+
+    <script>
+      const form = document.getElementById("myForm");
+      const jsonDataDiv = document.getElementById("jsonData");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const nameInput = document.getElementById("name");
+        const lastNameInput = document.getElementById("lastName");
+
+        const formData = {
+          name: nameInput.value,
+          lastName: lastNameInput.value,
+        };
+
+        const jsonData = JSON.stringify(formData, null, 2);
+        jsonDataDiv.textContent = jsonData;
+      });
+    </script>
+  </body>
+</html>
