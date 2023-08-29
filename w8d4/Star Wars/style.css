@@ -1,0 +1,82 @@
+html,body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    background-image: url("https://i.giphy.com/media/TxVVB6PfWMjE4/200.webp");
+    font-family: 'Helvetica Neue';
+    text-align: center;
+    color: yellow;
+  }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    /* background: url("https://pngimg.com/uploads/star_wars_logo/star_wars_logo_PNG34.png") center center no-repeat; */
+    width: 400px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.info-container {
+    border: 3px solid yellow;
+    border-radius: 15px;
+
+    width: 600px;
+    height: 300px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#button {
+    border: 3px solid yellow;
+	border-radius: 10px;
+
+    width: 350px;
+	height: 100px;
+
+    margin-top: 20px;
+
+    font-weight: bold;
+	font-size: 20px;
+
+	cursor: pointer;
+
+    background-color: transparent;
+
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow:
+        -1px -1px 0 yellow,
+         1px -1px 0 yellow,
+        -1px  1px 0 yellow,
+         1px  1px 0 yellow;
+}
+
+#button:hover {
+    background-color: yellow;
+}
+
+#name, #height, #gender, #birth-year, #home-world {
+    color: white;
+	font-size: 20px;
+}
