@@ -7,7 +7,7 @@
     "rootDir": "./",
     "strict": true
   },
-  "include": ["ex_xp/**/*.ts"],
+  "include": ["ex_xp/**/*.ts", "daily/**/*.ts"],
   "exclude": ["node_modules"],
   "types": ["node"]
 }
