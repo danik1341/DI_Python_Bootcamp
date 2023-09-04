@@ -1,0 +1,23 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const math_1 = require("./math");
+const lodash_1 = __importDefault(require("lodash"));
+const num1 = 5;
+const num2 = 3;
+const sum = math_1.math.add(num1, num2);
+const mult = math_1.math.multiplication(num1, num2);
+console.log(`Number 1: ${num1}`);
+console.log(`Number 2: ${num2}`);
+console.log(`Sum: ${sum}`);
+console.log(`Mult: ${mult}`);
+const num3 = lodash_1.default.random(1, 10);
+const num4 = lodash_1.default.random(1, 10);
+const sumRand = math_1.math.add(num3, num4);
+const multRand = math_1.math.multiplication(num3, num4);
+console.log(`Random Number 1: ${num3}`);
+console.log(`Random Number 2: ${num4}`);
+console.log(`Sum Random: ${sumRand}`);
+console.log(`Mult Random: ${multRand}`);

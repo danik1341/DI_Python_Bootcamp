@@ -1,0 +1,11 @@
+{
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/lodash": "^4.14.197",
+    "@types/node": "^20.5.9"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "lodash": "^4.17.21"
+  }
+}

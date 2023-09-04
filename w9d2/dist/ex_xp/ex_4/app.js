@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const todo_1 = require("./todo");
+const todoList = new todo_1.TodoList();
+todoList.addTask("Buy SOME MILK!");
+todoList.addTask("Find Dad");
+todoList.addTask("Get da bag");
+todoList.markTaskCompleted(0);
+console.log("Todo List:");
+todoList.listTasks();
