@@ -1,0 +1,74 @@
+.superhero-card {
+  width: 200px;
+  height: 300px; 
+  border: 1px solid #ccc; 
+  margin: 10px; 
+  text-align: center; 
+  cursor: pointer; 
+  overflow: hidden; 
+  transition: transform 0.2s; 
+}
+
+.superhero-card:hover {
+  transform: scale(1.05);
+}
+
+.superhero-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover; 
+}.superhero-card {
+  width: 200px;
+  height: 300px;
+  border: 1px solid #ccc;
+  margin: 10px;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; 
+}
+
+.superhero-card:hover {
+  transform: scale(1.05);
+}
+
+.superhero-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.superhero-card p {
+  margin: 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.superhero-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+
+.superhero-card p {
+  margin: 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-weight: bold;
+}
+
+.superhero-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+  gap: 20px; 
+  justify-content: center; 
+}
