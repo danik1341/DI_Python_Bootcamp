@@ -1,21 +1,21 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import quotes from "../utils/QuotesDatabase";
 
-class QuoteBox extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      quoteIndex: this.getRandomIndex(),
-      backgroundColor: this.getRandomColor(),
-      buttonColor: this.getRandomColor(),
-    };
-  }
+function QuoteBox() {
+  const [quoteIndex, setQuoteIndex] = useState(getRandomIndex());
+  const [backgroundColor, setBackgroundColor] = useState(getRandomColor());
+  const [buttonColor, setButtonColor] = useState(getRandomColor());
 
-  getRandomIndex() {
+  useEffect(() => {
+    setBackgroundColor(getRandomColor());
+    setButtonColor(getRandomColor());
+  }, [quoteIndex]);
+
+  function getRandomIndex() {
     return Math.floor(Math.random() * quotes.length);
   }
 
-  getRandomColor() {
+  function getRandomColor() {
     const letters = "0123456789ABCDEF";
     let color = "#";
     for (let i = 0; i < 6; i++) {
@@ -24,48 +24,41 @@ class QuoteBox extends Component {
     return color;
   }
 
-  generateNewQuote = () => {
+  function generateNewQuote() {
     let newIndex;
     do {
-      newIndex = this.getRandomIndex();
-    } while (newIndex === this.state.quoteIndex);
+      newIndex = getRandomIndex();
+    } while (newIndex === quoteIndex);
 
-    this.setState({
-      quoteIndex: newIndex,
-      backgroundColor: this.getRandomColor(),
-      buttonColor: this.getRandomColor(),
-    });
+    setQuoteIndex(newIndex);
+  }
+
+  const { quote, author } = quotes[quoteIndex];
+
+  const quoteStyle = {
+    backgroundColor,
+    color: "white",
+    padding: "20px",
+    textAlign: "center",
   };
 
-  render() {
-    const { quoteIndex, backgroundColor, buttonColor } = this.state;
-    const { quote, author } = quotes[quoteIndex];
+  const buttonStyle = {
+    backgroundColor: buttonColor,
+    color: "white",
+    padding: "10px 20px",
+    border: "none",
+    cursor: "pointer",
+  };
 
-    const quoteStyle = {
-      backgroundColor,
-      color: "white",
-      padding: "20px",
-      textAlign: "center",
-    };
-
-    const buttonStyle = {
-      backgroundColor: buttonColor,
-      color: "white",
-      padding: "10px 20px",
-      border: "none",
-      cursor: "pointer",
-    };
-
-    return (
-      <div style={quoteStyle}>
-        <h1>{quote}</h1>
-        <p>{author}</p>
-        <button style={buttonStyle} onClick={this.generateNewQuote}>
-          Get New Quote
-        </button>
-      </div>
-    );
-  }
+  return (
+    <div style={quoteStyle}>
+      <h1>{quote}</h1>
+      <p>{author}</p>
+      <button style={buttonStyle} onClick={generateNewQuote}>
+        Get New Quote
+      </button>
+    </div>
+  );
 }
 
 export default QuoteBox;
